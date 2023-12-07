@@ -52,6 +52,8 @@ import { AiApiService } from './Services/AiService/ai-api.service';
 import { HttpClient, HttpClientModule, HttpHandler, HttpParams } from '@angular/common/http';
 import { ConfigsService } from './Services/ConfigurationService/configuration.service';
 import { MatSelectModule } from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
@@ -75,6 +77,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatBadgeModule,
     MatRadioModule,
     MatSelectModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     FormsModule,
     HttpClientModule,

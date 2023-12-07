@@ -1,23 +1,26 @@
 <div class="container">
-    <mat-tab-group mat-stretch-tabs="false" color="accent" animationDuration="0" [(selectedIndex)]="tabSelectedIndex">
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon>add</mat-icon>
-        </ng-template>
-        <div class="formInputContainer">
-          <app-new-chat-session-form [currentUser]="currentUser" (chatCreated)="chatCreated($event)">        
-          </app-new-chat-session-form>
-        </div>
+  <!-- <div *ngIf="loading" class="loader-container">
+    <mat-spinner *ngIf="loading"></mat-spinner>    
+  </div> -->
+  <mat-tab-group #tabGroup mat-stretch-tabs="false" color="accent" animationDuration="0" [(selectedIndex)]="tabSelectedIndex" (selectedIndexChange)="selectedTabChange($event)" >
+    <mat-tab>
+      <ng-template class="firstTab" mat-tab-label>
+        <mat-icon>add</mat-icon>
+      </ng-template>
+      <div class="formInputContainer">
+        <app-new-chat-session-form [currentUser]="currentUser" (chatCreated)="chatCreated($event)">        
+        </app-new-chat-session-form>
+      </div>
+    </mat-tab>
+    <ng-container *ngFor="let session of chatSessions; index as i">
+    <mat-tab #tab [label]="session.sessionName" class="matTab"> 
+      <div class="chatContainer">
+        <app-base-chat-session [chatSession]="session"></app-base-chat-session>
+      </div>  
       </mat-tab>
-      <ng-container *ngFor="let session of chatSession; index as i">
-      <mat-tab #tab [label]="session.sessionName" class="matTab"> 
-        <div class="chatContainer">
-          <app-base-chat-session [chatSession]="session"></app-base-chat-session>
-        </div>  
-        </mat-tab>
-      </ng-container>
+    </ng-container>
 
-    </mat-tab-group>
+  </mat-tab-group>
 </div>
 
 

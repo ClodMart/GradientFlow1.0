@@ -90,8 +90,17 @@ export class UserService{
         return Output; 
     }
 
-    public getUserPersonalData(id :number) :UserData.UserPersonalData | null{
-            return this.allUsers.find(x=>x.userId == id) ?? null;
+    public getUserPersonalData(id :number) :UserData.UserPersonalData {
+            return this.allUsers.find(x=>x.userId == id) ?? {
+                userId: -1,
+                username: "Robottone",
+                name: "Robottone",
+                surname: "ChatBot",
+                birthDate: new Date,
+                email: "",
+                credit: 0,
+                paymentMethods: []
+            };
     }
 
     public getUserAppdataData(id :number) :UserData.UserAppdata | null{

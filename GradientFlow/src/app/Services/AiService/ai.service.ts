@@ -1,3 +1,4 @@
+import { ChatService } from 'src/app/Services/DataServices/chat.service';
 import { UserData } from '../../DataModel/userInterface';
 import { Injectable } from "@angular/core";
 import { DataModelFactory } from "../../DataModel/Mock/dataModelFactory";
@@ -6,14 +7,16 @@ import { ChatInterface } from 'src/app/DataModel/chatInterface';
 import { AiApiService } from './ai-api.service';
 import { AiMessage, AiRequestExisting, AiRequestNew, AiResponse, AiSession, IaParams } from './ai-response-dataModel';
 import { ApplicationUtilities } from 'src/app/DataModel/applicationUtilities';
-import { ChatService } from '../DataServices/chat.service';
 import { ApplicationData, ApplicationParameters } from 'src/app/DataModel/applicationInterface';
 import { UserService } from '../DataServices/user.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class AiService{
     constructor(private dataFactory:DataModelFactory, private aiApiService: AiApiService, private chatService: ChatService, private userService: UserService){}
 
+    private isLoadingSource = new BehaviorSubject(false);
+    public isLoading = this.isLoadingSource.asObservable();
     public CurrentAiSession: AiSession;
     public CurrentSession: ChatInterface.ChatSession; 
 
@@ -38,13 +41,20 @@ export class AiService{
         };
     }
 
-    public async InizializeChatSession(requestContent: ChatInterface.Message): Promise<ChatInterface.ChatSession | null>{
+    public async InizializeChatSession(requestContent: ChatInterface.Message, sessionTitle?: string): Promise<ChatInterface.ChatSession>{
+        if(sessionTitle && sessionTitle!="  "){
+            this.CurrentSession.sessionName = sessionTitle;
+        }
+        else{
+            this.CurrentSession.sessionName = requestContent.messageContent;
+        }
         //Generate ai message
-        let aiMessage = this.getIaMessage(requestContent.messageContent)
+        let aiMessage = this.getIaMessage(requestContent)
         //Adding it to current conversation array
-        this.CurrentAiSession?.messages.push(aiMessage);
-        this.CurrentSession?.messages.push(requestContent);
+        this.CurrentAiSession.messages.push(aiMessage);
+        this.CurrentSession.messages.push(requestContent);
         //Preparing Payload for request
+        this.changeLoading(true);
         let payload = this.GetPayload(IaParams.requestType.PROMPT, undefined, aiMessage);        
         let result: AiResponse | null = await this.aiApiService.post("/v1/completions", payload);  //Calling API
         if(result?.choices[0].message){
@@ -59,29 +69,17 @@ export class AiService{
         });
         let reply = this.chatService.createNewMessage(message, -1, requestContent.sessionId, requestContent.messageType, alternatives)
         //Add reply to local arrays
-        this.CurrentSession.sessionName = requestContent.messageContent
-            this.CurrentSession?.messages.push(reply);    
-
-        return this.CurrentSession ?? null //Adding new message to db and returning value for frontend
+        
+            this.CurrentSession.messages.push(reply);    
+            this.changeLoading(false);
+        return this.CurrentSession //Adding new message to db and returning value for frontend
     }
-
-    public LoadIa(userId: number){
-
-    }
-
-    public UpdateContext(){
-
-    }
-
-    public LoadFile(){
-
-    }
-
 
     public async SendMessage(requestContent: ChatInterface.Message): Promise<ChatInterface.Message | null>{
-        let aiMessage = this.getIaMessage(requestContent.messageContent)
-        this.CurrentAiSession?.messages.push(aiMessage); 
-        this.CurrentSession?.messages.push(requestContent);
+        let aiMessage = this.getIaMessage(requestContent)
+        this.CurrentAiSession.messages.push(aiMessage); 
+        this.CurrentSession.messages.push(requestContent);
+        this.changeLoading(true);
         let payload = this.GetPayload(IaParams.requestType.MESSAGES)
         let result: AiResponse | null = await this.aiApiService.post("/v1/chat/completions", payload);
         if(result?.choices[0].message){
@@ -93,10 +91,31 @@ export class AiService{
             alternatives.push(this.chatService.createNewMessage(x.message?.content ?? "", -1, requestContent.sessionId, requestContent.messageType))
         });
         let reply = this.chatService.createNewMessage(message, -1, requestContent.sessionId, requestContent.messageType, alternatives);
-    
+        this.changeLoading(false);
         return reply
     }
 
+
+    public LoadChatSession(session: ChatInterface.ChatSession){
+        this.CurrentSession = session;
+        this.CurrentAiSession = this.getIaChatSession(session);
+    }
+
+    public UpdateContext(){
+
+    }
+
+    public LoadFile(){
+
+    }
+
+
+
+    private changeLoading(loadingStatus: boolean) {
+        this.isLoadingSource.next(loadingStatus);
+      }
+
+    
     private GetPayload(requestType: IaParams.requestType, contextData?: ChatInterface.ChatSession,initialPrompt?: AiMessage): AiRequestNew | AiRequestExisting{
         switch(requestType){
             case IaParams.requestType.PROMPT:
@@ -129,10 +148,33 @@ export class AiService{
         }
     }
     
-    private getIaMessage(message: string) : AiMessage{
+    private getIaMessage(message: ChatInterface.Message) : AiMessage{
+        if(message.senderId == -1){
+            return {
+                content: message.messageContent,
+                role: IaParams.Role.ASSISTANT
+            }
+        }
+
         return {
-            content: message,
+            content: message.messageContent,
             role: IaParams.Role.USER
         }
+    }
+
+    private getIaChatSession(session: ChatInterface.ChatSession): AiSession{
+        let messages: AiMessage[]=[]; 
+        session.messages.forEach(message=>{
+            messages.push(this.getIaMessage(message));
+        })
+       return{
+        messages:messages,
+        prompt:"",
+        system_prompt: undefined,
+        use_context: false,
+        context_filter: session.iaContext,
+        include_sources: false,
+        stream: false,
+       } 
     }
 }

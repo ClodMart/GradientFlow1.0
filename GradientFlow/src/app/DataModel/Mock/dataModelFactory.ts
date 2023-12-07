@@ -254,7 +254,7 @@ export class DataModelFactory{
         id: 1,
         sessionName: "Prima Chat",
         isGroupChat: false,
-        usersId:[1,2],
+        usersId:[1,-1],
         createdAt: new Date,   
         createdById: 1, //UserId foreign key
         messages: this.GetMessages(1),
@@ -285,7 +285,8 @@ export class DataModelFactory{
   private GetIaContext(sessionId: number): Array<ChatInterface.Context>{
     return[{
       id: 1,
-      content: "test",
+      content: "test.doc",
+      filePath: "c:/..",
       sessionId: 1
     }].filter(x=>x.sessionId == sessionId) ?? [];
   }

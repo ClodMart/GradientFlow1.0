@@ -24,4 +24,12 @@ Benvenuto !
   </mat-select>
 </mat-form-field>
 </div>
+<p>
+  Dai anche un titolo alla chat !
+</p>
+<div class="inputContainer">
+  <mat-form-field appearance="fill" class="form" (keyup.enter)="createNewChatSession()">
+      <input matInput [(ngModel)]="sessionTitle"/>
+      </mat-form-field>
+</div>
 </div>

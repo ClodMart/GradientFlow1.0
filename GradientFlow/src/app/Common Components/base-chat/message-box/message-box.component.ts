@@ -33,7 +33,7 @@ constructor(private userService: UserService) {
   //   this.IsGroupChat = true;
   // }
 
-this.displayUsername = this.userService.getUserPersonalData(this.message?.senderId ?? "Robottone")?.username ?? "Robottone";
+this.displayUsername = this.userService.getUserPersonalData(this.message?.senderId).username;
 let dateTime = this.message?.dateTimeSent.toLocaleTimeString(this.userService.GetUserDateFormat(), {timeZone: this.userService.GetUserTimezone()}) ?? (new Date).toLocaleTimeString(this.userService.GetUserDateFormat(), {timeZone: this.userService.GetUserTimezone()})
 this.displayTime = dateTime.slice(0,5);
 

@@ -22,6 +22,7 @@ export class NewChatSessionFormComponent implements OnInit {
   public messageText: string;
   public projects: ApplicationParameters.Project[];
   public selectedProject= 0;
+  public sessionTitle: string = "";
 
   constructor(private projectService: ProjectService, private aiService:AiService, private chatService: ChatService ) {
     this.projects =  this.projectService.GetAllProjects();
@@ -32,9 +33,10 @@ export class NewChatSessionFormComponent implements OnInit {
   }
 
   public async createNewChatSession() {
+
     if(this.currentUser?.userId){
-      let messagge = this.chatService.createNewMessage(this.messageText, this.currentUser?.userId ?? -1, 0, this.messageType)
-      let session = await this.aiService.InizializeChatSession(messagge);
+      let messagge = this.chatService.createNewMessage(this.messageText, this.currentUser?.userId ?? 0, 0, this.messageType)
+      let session = await this.aiService.InizializeChatSession(messagge, this.sessionTitle);
       this.chatCreated.emit(session ?? undefined);
     }
   }

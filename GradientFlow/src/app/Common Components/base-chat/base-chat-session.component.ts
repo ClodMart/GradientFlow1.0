@@ -20,16 +20,15 @@ export class BaseChatSessionComponent implements OnInit {
   public currentUser?: UserData.UserAppdata;
   public messageText: string;
   public messageType: Enums.MessageTypes;
+  public loading: boolean;
 
   constructor(private chatService: ChatService, private userService: UserService, private aiService: AiService){
     this.currentUser = this.userService.UserAppData;
-    // if(!this.chatSession){
-    //   this.chatSession = this.chatService.GetUserChatSessions(1).find(x=>1==1) ?? this.getChatSession();
-    // }
     this.messageType = Enums.MessageTypes.textMessage;
   }
 
   public ngOnInit(): void {
+    this.aiService.isLoading.subscribe(loadStatus => this.loading = loadStatus)
     this.scrollToBottom();
   }
 
@@ -37,23 +36,14 @@ export class BaseChatSessionComponent implements OnInit {
     this.scrollToBottom();        
 } 
 
-  private getChatSession(): ChatInterface.ChatSession{
-    return{
-      id: 1,
-      sessionName: "Prima Chat",
-      isGroupChat: false,
-      usersId:[1,2],
-      createdAt: new Date,   
-      createdById: 1, //UserId foreign key
-      messages: [],
-      iaContext: [] ,
-    }
-  } 
+  private getCurrentChatSession(): ChatInterface.ChatSession{
+    return this.chatSession;  } 
 
 
   public async sendMessage() {
-    if(this.currentUser?.userId){
-      let messagge = this.chatService.createNewMessage(this.messageText, this.currentUser?.userId ?? -1, this.chatSession.id, this.messageType)
+    if(this.currentUser && !this.loading){
+      let messagge = this.chatService.createNewMessage(this.messageText, this.currentUser.userId ?? -1, this.chatSession.id, this.messageType);
+      this.messageText = "";
       let reply = await this.aiService.SendMessage(messagge);
       if(reply){
         this.chatSession.messages.push(reply);

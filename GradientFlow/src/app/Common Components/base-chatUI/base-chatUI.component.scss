@@ -1,6 +1,30 @@
+.loader-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0.8;
+  border-radius: 1rem;
+}
+
 .mat-mdc-tab-group {
     flex-direction: row-reverse !important;
     padding-top: auto !important; 
+    ::ng-deep .mat-mdc-tab-body-wrapper{
+      background-color: rgb(255, 255, 255,0.2);
+      border: 1px solid gray;
+      border-right: 0px;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+    }
+
     ::ng-deep .mat-mdc-tab-header{
       flex-direction: column !important;
        .mat-mdc-tab-label-container{
@@ -8,28 +32,64 @@
         .mat-mdc-tab-list{
          display: flex !important;
          flex-direction: column !important;
-          .mat-mdc-tab-labels{
+          .mat-mdc-tab-labels{  
             display: flex !important;
             flex-direction: column !important;
-            // :last-child{
-            //   margin-top: auto;
-
-            // }
-            .mdc-tab__text-label{
-              margin: 0rem; 
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border: 1px solid gray;
+            border-left: 0px;
+            background-color: rgba(255, 255, 255, 0.1);
+            .mdc-tab.mdc-tab{
+              border-bottom: 1px solid darkgrey;
+              font-size: small;
             }
+            .mdc-tab.mdc-tab{
+              .mdc-tab__text-label{
+                margin: 0rem; 
+                color: white;
+              }
+            }
+            .mdc-tab.mdc-tab--active{
+              background-color: rgb(255, 255, 255,0.1) !important;
+              font-weight: 900;
+              border-bottom: 1px solid transparent;
+              font-size: small;
+              font-weight: normal;
+              .mdc-tab__text-label{
+                margin: 0rem; 
+                color:#f99317;
+              }
+            }
+
+
+
           }
         }
        }
+    }
+
+    ::ng-deep #mat-tab-label-0-0{
+      border-top-left-radius: 0;
+      border-top-right-radius: 1rem; 
+      // border-top: 1px solid gray;
+      // border-right: 1px solid gray;
+    }
+
+    ::ng-deep #mat-tab-label-1-0{
+      border-top-left-radius: 0;
+      border-top-right-radius: 1rem;  
     }
 
      ::ng-deep .mat-mdc-tab-body-wrapper{
       min-width: 60rem !important;
       margin-right: 0rem !important;
       align-items: flex-end;
-      border: 2px solid gray;
-      border-right: transparent;
+      // border: 2px solid gray;
+      // border-right: transparent;
       border-radius: 1.5rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius:0 ;
      } 
 
      .formInputContainer{

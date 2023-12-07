@@ -27,7 +27,8 @@ export namespace ChatInterface{
 
     export interface Context{
         id: number,
-        content: string,
+        content: string, //File Id
+        filePath: string,
         //Used on mock
         sessionId: number,
     }

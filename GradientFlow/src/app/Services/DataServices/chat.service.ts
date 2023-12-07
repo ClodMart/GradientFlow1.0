@@ -38,12 +38,11 @@ export class ChatService{
     }
 
     public GetUserChatSessions(userId: number): ChatInterface.ChatSession[]{
-        return[]
-        //return this.chatSessions.filter(x=>x.createdById == userId)
+        return this.chatSessions.filter(x=>x.createdById == userId)
     }
 
 
-public createNewMessage(text: string, userId: number, sessionId: number, messageType: Enums.MessageTypes, alternatives?: ChatInterface.Message[]) : ChatInterface.Message{
+public  createNewMessage(text: string, userId: number, sessionId: number, messageType: Enums.MessageTypes, alternatives?: ChatInterface.Message[]) : ChatInterface.Message{
         let maxid = 0;
         this.chatSessions.forEach(x => {
             x.messages.forEach(y=>{
