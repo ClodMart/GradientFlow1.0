@@ -1,0 +1,11 @@
+<mat-toolbar role="heading" class="mat-toolbar" color="primary">
+  <button mat-icon-button (click)="clickMenu()" class="menuButton">
+    <mat-icon class="white-icon">menu</mat-icon>
+  </button>
+  <button mat-button class="titleButton" [routerLink]="'home'">
+    {{ title }}
+  </button>
+  <button mat-icon-button class="leftButton" [routerLink]="'search'">
+    <mat-icon class="white-icon">search</mat-icon>
+  </button>
+</mat-toolbar>

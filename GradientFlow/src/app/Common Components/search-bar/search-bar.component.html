@@ -1,0 +1,53 @@
+<mat-tab-group headerPosition="below" color="accent" animationDuration="0" (selectedTabChange)="tabChanged($event)">
+  <mat-tab #tab *ngIf="hasQuestionSearch" label="Questions" class="matTab"> 
+    <div class="tabContainer">
+      <mat-form-field appearance="fill" class="form" (keyup.enter)="searchQuestions()">
+        <mat-label>Search Questions</mat-label>
+        <input matInput [(ngModel)]="searchText" />
+        <mat-icon matSuffix (click)="searchQuestions()">search</mat-icon>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an option" labelPosition="before" [(ngModel)]="searchType">
+          <mat-radio-button *ngFor="let type of radiobuttonList; index as i" class="radioButton" [value]="type">{{type}}</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="questionData.length>0">
+        <app-base-grid #resultGrid  class="form" [TableData]="questionData" [columnsDefinitions]="questionColumnsDefinitions" [title]="TableTitle"></app-base-grid>
+      </div>
+    </div>    
+   </mat-tab>
+
+  <mat-tab #tab *ngIf="hasProjectSearch" label="Project"> 
+    <div class="tabContainer">
+      <mat-form-field appearance="fill" class="form" (keyup.enter)="searchQuestions()">
+        <mat-label>Search Projects</mat-label>
+        <input matInput [(ngModel)]="searchText" />
+        <mat-icon matSuffix (click)="searchProjects()">search</mat-icon>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an option" labelPosition="before" [(ngModel)]="searchType">
+          <mat-radio-button *ngFor="let type of radiobuttonList; index as i" class="radioButton" [value]="type">{{type}}</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="projectsData.length>0">
+        <app-base-grid #resultGrid class="form" [TableData]="projectsData" [columnsDefinitions]="projectsColumnsDefinitions  " [title]="TableTitle"></app-base-grid>
+      </div>
+    </div>    
+  </mat-tab>
+
+  <mat-tab label="Users"> 
+    <div class="tabContainer">
+      <mat-form-field appearance="fill" class="form" (keyup.enter)="searchQuestions()">
+        <mat-label>Search Users</mat-label>
+        <input matInput [(ngModel)]="searchText" />
+        <mat-icon matSuffix (click)="searchUsers()">search</mat-icon>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an option" labelPosition="before" [(ngModel)]="searchType">
+          <mat-radio-button *ngFor="let type of radiobuttonList; index as i" class="radioButton" [value]="type">{{type}}</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="usersData.length>0">
+        <app-base-grid #resultGrid class="form" [TableData]="usersData" [columnsDefinitions]="usersColumnsDefinitions  " [title]="TableTitle"></app-base-grid>
+      </div>
+    </div>   
+  </mat-tab>
+</mat-tab-group>
+   
+
+   
+

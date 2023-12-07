@@ -1,0 +1,27 @@
+<div class="container">
+<p>
+Benvenuto !
+</p>
+<p>
+  Io sono il tuo assistente virtuale chiedimi qualsiasi cosa.
+</p>
+<div class="inputContainer">
+  <mat-form-field appearance="fill" class="form" (keyup.enter)="createNewChatSession()">
+      <input matInput [(ngModel)]="messageText" />
+      <mat-icon matSuffix (click)="createNewChatSession()">send</mat-icon>
+      </mat-form-field>
+</div>
+<p>
+  Se vuoi risposte più dettagliate seleziona il progetto per cui vuoi avere assistenza
+</p>
+<div class="inputContainer">
+<mat-form-field class="form">
+  <mat-label>Projects</mat-label>
+  <mat-select matNativeControl required [(value)]="selectedProject">
+    <ng-container *ngFor="let project of projects">
+      <mat-option [value]="project.id">{{project.title}}</mat-option>
+    </ng-container>
+  </mat-select>
+</mat-form-field>
+</div>
+</div>

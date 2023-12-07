@@ -1,0 +1,6 @@
+{
+    "BASE_URL": "",
+    "SIGNALR_URL": "",
+    "AI_API_BASE_URL": "http://localhost:8001",
+    "AI_API_SIGNALR_URL": ""
+}

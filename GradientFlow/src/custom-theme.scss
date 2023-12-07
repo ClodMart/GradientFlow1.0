@@ -1,0 +1,90 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+$primary-palette: (
+    50: #eaebf3,
+    100: #cacde2,
+    200: #a9aece,
+    300: #a9aece,
+    400: #7075aa,
+    500: #5a5c9c,
+    600: #535493,
+    700: #4a4a87,
+    800: #43417a,
+    900: #363062,
+    contrast: (
+      50: #d55223,
+      100: #df6a29,
+      200: #e7792b,
+      300: #ee872e,
+      400: #f39231,
+      500: #f5a140,
+      600: #f7b15d,
+      700: #fac789,
+      800: #fcddb7,
+      900: #fef2e2,
+    )
+   );
+
+   $accent-palette: (
+    50: #fef8e2,
+    100: #fdedb6,
+    200: #fce187,
+    300: #fbd757,
+    400: #fbcc36,
+    500: #fac424,
+    600: #fab61e,
+    700: #f9a41a,
+    800: #f99317,
+    900: #f87612,
+    contrast: (
+      50: #a187fd,
+      100: #a187fd,
+      200: #a187fd,
+      300: #a187fd,
+      400: #a187fd,
+      500: #a187fd,
+      600: #a187fd,
+      700: #a187fd,
+      800: #a187fd,
+      900: #a187fd,
+    ));
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$GradientFlow-primary: mat.define-palette($primary-palette,600,400,800);
+$GradientFlow-accent: mat.define-palette($accent-palette, 800, 400, 900);
+
+// The warn palette is optional (defaults to red).
+$GradientFlow-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$GradientFlow-theme: mat.define-light-theme((
+  color: (
+    primary: $GradientFlow-primary,
+    accent: $GradientFlow-accent,
+    warn: $GradientFlow-warn,
+  )
+));
+
+// $GradientFlow-theme: mat.define-dark-theme((
+//   color: (
+//     primary: $GradientFlow-primary,
+//     accent: $GradientFlow-accent,
+//     warn: $GradientFlow-warn,
+//   )
+// ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($GradientFlow-theme);
+

@@ -1,0 +1,63 @@
+.container
+{
+  display: flex;
+  height:100%;
+  width: 100%;
+  min-width: fit-content;
+  min-height: fit-content;
+  align-content: center;
+  justify-content: center;
+  margin:0;
+  padding:0;
+  background:lightblue url("../../../assets/background.svg") no-repeat fixed center;
+  background-size: cover;
+}
+.app-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+
+.mat-drawer-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding: 2rem;
+  min-width: fit-content !important;
+  min-height: fit-content !important;
+}
+
+/* .appRouter{
+   display: flex; 
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap ;
+  align-content: flex-start;
+  min-height: fit-content !important;
+} */
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mat-sidenav {
+  display: flex;
+  width: 30%;
+  /* background-color: darkcyan; */
+left: 0;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .mat-sidenav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+}

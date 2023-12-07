@@ -1,0 +1,47 @@
+.mat-toolbar {
+  position: fixed;
+  height: 4rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* background-color: darkcyan ; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.leftButton{
+  position: fixed;
+  right: 0.125rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.menuButton{
+  position:fixed;
+  left: 0.125rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.titleButton{
+  position:fixed;
+  left: 2.2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.white-icon {
+  color: white;
+}

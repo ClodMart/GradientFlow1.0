@@ -1,0 +1,15 @@
+.container{
+  margin: 0.25rem;
+  width: 20rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matIcon{
+color: white ;
+margin-right: 1rem;
+}

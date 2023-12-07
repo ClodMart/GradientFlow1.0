@@ -1,0 +1,16 @@
+.chatContainer{
+    display: flex;
+    min-height: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    max-width: max-content;
+    max-height: max-content;
+    flex-direction: column;
+  }
+
+  .te{
+    min-width: 70%;
+  }

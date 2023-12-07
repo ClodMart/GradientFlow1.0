@@ -1,0 +1,12 @@
+<div class="divContent">
+  <mat-form-field class="fromField">
+    <input class="Input" matInput [(ngModel)]='username' id="username" type="text" placeholder="Username" required>
+  </mat-form-field>
+  <mat-form-field class="fromField">
+    <input class="Input" matInput [(ngModel)]='password' [type]="hide ? 'password' : 'text'" placeholder="Password" required>
+    <mat-icon class="Input" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field>
+
+  <button (click)="login()">Login</button>
+</div>
+

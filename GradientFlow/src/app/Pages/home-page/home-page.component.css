@@ -1,0 +1,57 @@
+.chatContainer{
+  display: flex;
+  min-height: fit-content;
+  justify-content: center;
+  align-items: flex-start;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  max-width: max-content;
+  max-height: max-content;
+}
+.container{
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+  align-items: flex-start;
+  backdrop-filter: blur(5px);
+  max-width: fit-content;
+  max-height: fit-content;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 2rem;
+  min-width: 65rem;
+  max-width: 65rem;
+}
+
+@media screen and (max-width: 700px){ .container {flex-direction: column;} } 
+
+.boxContent1{
+  display: flex !important;
+  margin-right: 1rem !important;
+}
+
+.boxContent2{
+  display: flex !important;
+  margin-left: 1rem !important;
+}
+
+.tableContainer{
+  min-width: fit-content;
+  min-height: fit-content;
+  display: flex;
+  margin: 0rem; 
+}
+
+.topQuadrant{
+  display: flex;
+  position: flex;
+  align-self: start;
+  justify-content: stretch;
+  flex-direction: row;
+  width: 100%;
+  margin: 0.2rem;
+  /* overflow: hidden; */
+}
+

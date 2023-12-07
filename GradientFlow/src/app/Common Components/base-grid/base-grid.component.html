@@ -1,0 +1,40 @@
+ <div class="container">
+    <mat-toolbar-row *ngIf="title" class="tableTitle" color="primary">
+        <span>{{title}}</span>
+    </mat-toolbar-row>
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container *ngFor="let disCol of columnsDefinitions" matColumnDef="{{disCol.colId}}" [ngSwitch]="disCol.colType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by {{disCol.header}}">{{disCol.header}}</th>
+
+                    <ng-container *ngSwitchDefault >
+                        <td #DefaultCol mat-cell *matCellDef="let element">
+                           <span class="defaultColum">{{element[disCol.colId]}}</span> 
+                        </td>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="stringType">
+                        <td mat-cell *matCellDef="let element" class="defaultColum">{{element[disCol.colId]}}</td>
+                    </ng-container>      
+                    <ng-container *ngSwitchCase="numberType">
+                        <td mat-cell *matCellDef="let element">
+                            {{element[disCol.colId]}}
+                        </td>
+                    </ng-container>    
+                    <ng-container *ngSwitchCase="NotifButtonType">
+                        <td mat-cell *matCellDef="let element">   
+                            <button  mat-mini-fab color="primary">
+                                <mat-icon class="icon-display" matBadgeHidden="{{element[disCol.colId]==0}}" matBadge="{{element[disCol.colId]}}" matBadgeColor="warn" matBadgeSize="medium">view_agenda</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>         
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="columnList"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnList;"
+                (dblclick)="doubleClickEmitter($event)"></tr>
+            </table>
+    <mat-paginator [pageSizeOptions]="[5]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>

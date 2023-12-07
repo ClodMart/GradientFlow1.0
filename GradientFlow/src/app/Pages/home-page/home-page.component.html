@@ -1,0 +1,14 @@
+<div class="chatContainer">
+        <app-search-bar
+        [hasProjectSearch]=true
+        [hasQuestionSearch]=true
+        [hasUserSearch]=true></app-search-bar>
+</div>
+<div class="container">
+        <div class="tableContainer">
+        <app-base-grid #ProjectsGrid class="boxContent1" [TableData]="projectsData" [columnsDefinitions]="projectsColumnsDefinitions" [title]="projectTableTitle"></app-base-grid> 
+        </div>
+        <div class="tableContainer">
+        <app-base-grid #QuestionsGrid class="boxContent2" [TableData]="questionData" [columnsDefinitions]="questionColumnsDefinitions" [title]="questionsTableTitle"></app-base-grid>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div #chatContainer class="chatContainer">
+    <ng-container *ngFor="let item of chatSession.messages">
+        <div class="messageContainer">
+            <app-message-box [message]="item" [IsRightMessage]="item.senderId==currentUser?.userId"></app-message-box>    
+        </div>  
+    </ng-container>
+</div>
+
+
+<div class="inputContainer">
+    <mat-form-field appearance="fill" class="form" (keyup.enter)="sendMessage()">
+        <input matInput [(ngModel)]="messageText" />
+        <mat-icon matSuffix (click)="sendMessage()">send</mat-icon>
+        </mat-form-field>
+</div>
+
+
+

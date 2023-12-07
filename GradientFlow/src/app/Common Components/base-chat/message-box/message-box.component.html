@@ -1,0 +1,40 @@
+
+    <div class="container">
+        <div class="containerLeft" *ngIf="!IsRightMessage">
+            <div class="leftAccent"></div>
+            <mat-card class="left_card">
+                <mat-card-header *ngIf="IsGroupChat" class="card_header">
+                    <mat-card-title>{{displayUsername}}</mat-card-title>
+                </mat-card-header>
+                <!-- <img matCardImage src="Card wide image source"> -->
+                <mat-card-content class="card_content">
+                    {{message.messageContent}}
+                </mat-card-content>
+                <!-- <mat-card-actions align="start">
+                    <button mat-button (click)="onAction1">Action1</button>
+                    
+                </mat-card-actions> -->
+                <mat-card-footer class="card_footer">
+                    {{displayTime}}
+                </mat-card-footer>
+            </mat-card> 
+        </div>
+        <div class="containerRight" *ngIf="IsRightMessage">
+            <mat-card class="right_card">
+                <!-- <img matCardImage src="Card wide image source"> -->
+                <mat-card-content class="card_content">
+                    {{message.messageContent}}
+                </mat-card-content>
+                <!-- <mat-card-actions align="start">
+                    <button mat-button (click)="onAction1">Action1</button>
+                    
+                </mat-card-actions> -->
+                <mat-card-footer class="card_footer">
+                    {{displayTime}}
+                </mat-card-footer>
+            </mat-card> 
+            <div class="rightAccent"></div>
+        </div>
+    </div>
+    
+

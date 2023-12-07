@@ -1,0 +1,136 @@
+ 
+  .container{
+    /* border: 0.1rem solid darkgrey; */
+    border-radius: 0.5rem;
+    width: 100%;  
+    overflow: hidden;
+    margin: 0rem;
+  } 
+
+.tableTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    height: fit-content;
+    //background-color: $primary-default;
+    background-color: rgb(87, 16, 168) !important;
+    font-size: small;
+    text-decoration: underline;
+    border-bottom: 0.1rem solid darkgrey;
+  }
+
+//   @mixin color($theme) {.tableTitle {
+//     // Read the 500 hue from the primary color palette.
+//     background-color: mat.get-theme-color($theme, primary, 500);
+//   }
+// }
+
+  .tableContainer{
+    display: flex;
+    /* min-width: fit-content; */
+    justify-self: stretch;
+    align-self: stretch;
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  .defaultColum{
+    padding: 0rem !important;
+  }
+
+  .icon-display{
+    transform: scale(0.8);
+  }
+
+  .risedButton{
+    padding: 0rem !important;
+    margin: 0rem !important;
+    max-height: fit-content !important;
+  }
+
+  .numberColum{
+    padding: 0rem;
+  }
+
+  table {
+    height: 20%;
+    border-radius: 0.5rem;
+    margin: 0rem;
+  }
+  /*Row Definitions*/
+  .mat-mdc-table tfoot, .mat-mdc-row, .mat-mdc-footer-row {
+  font-size: x-small;
+  border-top: 0.5px solid darkgray;
+  border-bottom: 0.5px solid darkgray;
+  height: fit-content;
+  }
+
+  /*Cell Definitions*/
+.mat-mdc-cell, .mat-mdc-footer-cell{
+    font-size: x-small;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+  }
+
+  /*Paginator Definitions*/
+
+  ::ng-deep .mat-mdc-paginator-outer-container{
+    max-height: fit-content !important;
+    background-color: gray !important;
+  }
+
+  ::ng-deep .mat-mdc-paginator-container {
+    justify-content: space-between !important;
+    min-height: fit-content !important;
+  }
+
+  .mat-mdc-paginator{
+    /* border-top: 0.5px solid darkgray; */
+    font-size: x-small;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    text-align: start;
+    align-content: flex-start;
+  }
+
+  /*Paginator buttons Definitions*/
+  ::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+    padding: 0rem !important;
+  }
+
+  ::ng-deep .mat-mdc-icon-button svg {
+    vertical-align: middle !important;
+  }
+
+  /*Header Definitions*/
+::ng-deep .mat-mdc-table thead{
+  background-color: gray !important;
+} 
+
+::ng-deep .mat-mdc-header-row, .mat-mdc-table .mat-mdc-header-cell {
+  height: fit-content !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+ ::ng-deep .mat-sort-header-container {
+      font-size: x-small;
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+      justify-content: center;
+      text-align: center;
+      align-content: center;
+  }
+
+
+  ::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+    --mdc-icon-button-state-layer-size: 2rem !important;
+    padding: 0rem !important;
+  }
+
+  ::ng-deep .mat-mdc-icon-button svg {
+    vertical-align: middle !important;
+  }

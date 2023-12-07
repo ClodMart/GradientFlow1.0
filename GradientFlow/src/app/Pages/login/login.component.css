@@ -1,0 +1,24 @@
+
+ .divContent{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+  }
+
+.fromField{  
+    width: 20rem;
+    
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: white;
+        border: 0.1rem solid black;
+        border-radius: 10px;
+    }
+}
+
+.Input{
+    background-color: white;
+    border-color: white;
+}

@@ -1,0 +1,38 @@
+.mat-mdc-tab-group {
+    flex-direction: row-reverse !important;
+    padding-top: auto !important; 
+    ::ng-deep .mat-mdc-tab-header{
+      flex-direction: column !important;
+       .mat-mdc-tab-label-container{
+         flex-direction: column !important;
+        .mat-mdc-tab-list{
+         display: flex !important;
+         flex-direction: column !important;
+          .mat-mdc-tab-labels{
+            display: flex !important;
+            flex-direction: column !important;
+            // :last-child{
+            //   margin-top: auto;
+
+            // }
+            .mdc-tab__text-label{
+              margin: 0rem; 
+            }
+          }
+        }
+       }
+    }
+
+     ::ng-deep .mat-mdc-tab-body-wrapper{
+      min-width: 60rem !important;
+      margin-right: 0rem !important;
+      align-items: flex-end;
+      border: 2px solid gray;
+      border-right: transparent;
+      border-radius: 1.5rem;
+     } 
+
+     .formInputContainer{
+      align-content: center;
+     }
+  }
