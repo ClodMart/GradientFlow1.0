@@ -285,7 +285,7 @@ export class DataModelFactory{
   private GetIaContext(sessionId: number): Array<ChatInterface.Context>{
     return[{
       id: 1,
-      content: "test.doc",
+      fileId: "test.doc",
       filePath: "c:/..",
       sessionId: 1
     }].filter(x=>x.sessionId == sessionId) ?? [];

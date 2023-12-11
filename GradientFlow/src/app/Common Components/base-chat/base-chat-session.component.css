@@ -6,6 +6,10 @@
     max-width: 110vh;
 }
 
+.hide{
+    display: none;
+}
+
 .messageContainer{
     display: flex;
     flex-direction: column;
@@ -13,12 +17,29 @@
     justify-content: space-between;
 }
 
+.buttonsContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    .attach{
+        border-radius: 2rem;
+    }
+    .attach:hover{
+        background-color: aquamarine;
+        opacity: 0.5;
+    }
+    .attach:active{
+        background-color: lightgreen;
+        opacity: 0.5;  
+    }
+}
+
 .inputContainer{
     display: flex;
     flex-direction: column;
     min-width: 100%;
     justify-content: space-between;
-
     background-color: slategray;
     border-radius: 1rem;
 }
@@ -26,7 +47,7 @@
 .form{
     overflow: hidden;
     margin: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     border: 2px solid gray;
     border-radius: 1rem;
 }

@@ -56,4 +56,17 @@ export class BaseChatSessionComponent implements OnInit {
           this.messageBox.nativeElement.scrollTop = this.messageBox.nativeElement.scrollHeight;
       } catch(err) { }                 
   } 
+
+ public uploadChanged($event: Event) {
+  //Salva import sul backend.
+  //Invia file alla IA.
+  const element = $event.currentTarget as HTMLInputElement;
+  let files = element.files;
+  if(files){
+      //Salva import sul backend.
+      //Invia file alla IA.
+  }
+
+ }
+
 }

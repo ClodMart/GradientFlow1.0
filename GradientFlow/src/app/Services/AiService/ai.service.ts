@@ -101,12 +101,13 @@ export class AiService{
         this.CurrentAiSession = this.getIaChatSession(session);
     }
 
-    public UpdateContext(){
-
+    public UpdateContext(context: ChatInterface.Context){
+        this.CurrentSession.iaContext?.push(context);
+        (this.CurrentAiSession.context_filter as string[]).push(context.fileId);
     }
 
-    public LoadFile(){
-
+    public LoadFile(file: File){
+        this.CurrentAiSession.context_filter
     }
 
 
@@ -115,6 +116,15 @@ export class AiService{
         this.isLoadingSource.next(loadingStatus);
       }
 
+
+    // private getContextFromFile(file: File) : ChatInterface.Context{
+    //     return{        
+    //         id: 0,
+    //         fileId: file.name,
+    //         filePath: file.,
+    //         sessionId: number,
+    //     }
+    // }
     
     private GetPayload(requestType: IaParams.requestType, contextData?: ChatInterface.ChatSession,initialPrompt?: AiMessage): AiRequestNew | AiRequestExisting{
         switch(requestType){

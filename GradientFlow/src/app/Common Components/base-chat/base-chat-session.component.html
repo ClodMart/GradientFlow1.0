@@ -9,6 +9,15 @@
 
 
 <div class="inputContainer">
+    <div class="buttonsContainer">
+        <input #FileUpload class="hide" id="input-file-id" multiple type="file" (ngModelChange)="uploadChanged($event)"/>
+        <!-- <mat-icon class="attach" (click)="FileUpload.click()">attach_file</mat-icon> -->
+
+        <button mat-mini-fab color="primary" class="upload-btn"
+        (click)="FileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+      </button>
+    </div>
     <mat-form-field appearance="fill" class="form" (keyup.enter)="sendMessage()"> 
         <input matInput [(ngModel)]="messageText" [readonly]="loading"/>
         <mat-icon matSuffix (click)="sendMessage()">send</mat-icon>
