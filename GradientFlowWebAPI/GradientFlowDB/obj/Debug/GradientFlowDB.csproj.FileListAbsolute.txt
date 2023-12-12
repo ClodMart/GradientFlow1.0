@@ -1,0 +1,14 @@
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\GradientFlowDB.dll.config
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\GradientFlowDB.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\GradientFlowDB.pdb
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\EntityFramework.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\EntityFramework.xml
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\it\EntityFramework.resources.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\bin\Debug\it\EntityFramework.SqlServer.resources.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\obj\Debug\GradientFlowDB.csproj.AssemblyReference.cache
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\obj\Debug\GradientFlowDB.csproj.CoreCompileInputs.cache
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\obj\Debug\GradientFlowDB.csproj.CopyComplete
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\obj\Debug\GradientFlowDB.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\GradientFlowDB\obj\Debug\GradientFlowDB.pdb

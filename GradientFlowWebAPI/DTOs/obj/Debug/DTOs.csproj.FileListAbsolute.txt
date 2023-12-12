@@ -1,0 +1,6 @@
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\bin\Debug\DTOs.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\bin\Debug\DTOs.pdb
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\obj\Debug\DTOs.csproj.AssemblyReference.cache
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\obj\Debug\DTOs.csproj.CoreCompileInputs.cache
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\obj\Debug\DTOs.dll
+C:\Users\claud\source\repos\GradientFlowWebApi\DTOs\obj\Debug\DTOs.pdb

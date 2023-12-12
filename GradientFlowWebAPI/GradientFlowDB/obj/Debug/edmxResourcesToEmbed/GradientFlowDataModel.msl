@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GradientFlowDBModelStoreContainer" CdmEntityContainer="GradientFlowDBEntities">
+    <EntitySetMapping Name="APP_DATA_ANSWERS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_ANSWERS">
+        <MappingFragment StoreEntitySet="APP_DATA_ANSWERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+          <ScalarProperty Name="SUBMITTING_USER_ID" ColumnName="SUBMITTING_USER_ID" />
+          <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_DATA_EVALUATIONS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_EVALUATIONS">
+        <MappingFragment StoreEntitySet="APP_DATA_EVALUATIONS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QUALITY" ColumnName="QUALITY" />
+          <ScalarProperty Name="CREATED_USER_ID" ColumnName="CREATED_USER_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_DATA_QUESTIONS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_QUESTIONS">
+        <MappingFragment StoreEntitySet="APP_DATA_QUESTIONS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="REPLIED" ColumnName="REPLIED" />
+          <ScalarProperty Name="SUBMITTING_USER_ID" ColumnName="SUBMITTING_USER_ID" />
+          <ScalarProperty Name="PROJECT_ID" ColumnName="PROJECT_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_DATA_USER_APPLICATION">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_USER_APPLICATION">
+        <MappingFragment StoreEntitySet="APP_DATA_USER_APPLICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_DATA_USER_PERSONAL">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_USER_PERSONAL">
+        <MappingFragment StoreEntitySet="APP_DATA_USER_PERSONAL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="BIRTH_DATE" ColumnName="BIRTH_DATE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_DATA_USERS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_DATA_USERS">
+        <MappingFragment StoreEntitySet="APP_DATA_USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_PROJECTS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_PROJECTS">
+        <MappingFragment StoreEntitySet="APP_PARAMS_PROJECTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_TABLE_SETTINGS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_TABLE_SETTINGS">
+        <MappingFragment StoreEntitySet="APP_PARAMS_TABLE_SETTINGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TABLE_ID" ColumnName="TABLE_ID" />
+          <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+          <ScalarProperty Name="COLUMN_HEADER" ColumnName="COLUMN_HEADER" />
+          <ScalarProperty Name="COLUMN_TYPE" ColumnName="COLUMN_TYPE" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_TABLES">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_TABLES">
+        <MappingFragment StoreEntitySet="APP_PARAMS_TABLES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_TOPICS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_TOPICS">
+        <MappingFragment StoreEntitySet="APP_PARAMS_TOPICS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_VALUATION_TYPES">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_VALUATION_TYPES">
+        <MappingFragment StoreEntitySet="APP_PARAMS_VALUATION_TYPES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VALUATION_TYPE_NAME" ColumnName="VALUATION_TYPE_NAME" />
+          <ScalarProperty Name="VALUATION_DESCRIPTION" ColumnName="VALUATION_DESCRIPTION" />
+          <ScalarProperty Name="CREATED_USER_ID" ColumnName="CREATED_USER_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APP_PARAMS_VALUATIONS">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.APP_PARAMS_VALUATIONS">
+        <MappingFragment StoreEntitySet="APP_PARAMS_VALUATIONS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VALUATION_TITLE" ColumnName="VALUATION_TITLE" />
+          <ScalarProperty Name="VALUATION_DESCRIPTION" ColumnName="VALUATION_DESCRIPTION" />
+          <ScalarProperty Name="VALUATION_TYPE_ID" ColumnName="VALUATION_TYPE_ID" />
+          <ScalarProperty Name="CREATED_USER_ID" ColumnName="CREATED_USER_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+          <ScalarProperty Name="MODIFIED_USERID" ColumnName="MODIFIED_USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_USER_LOGIN">
+      <EntityTypeMapping TypeName="GradientFlowDBModel.SYS_USER_LOGIN">
+        <MappingFragment StoreEntitySet="SYS_USER_LOGIN">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserRoles" ColumnName="UserRoles" />
+          <ScalarProperty Name="UserEmailID" ColumnName="UserEmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

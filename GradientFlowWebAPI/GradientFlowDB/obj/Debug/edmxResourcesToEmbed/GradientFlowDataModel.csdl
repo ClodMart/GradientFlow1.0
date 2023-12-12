@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GradientFlowDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="APP_DATA_ANSWERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VERIFIED" Type="Boolean" Nullable="false" />
+    <Property Name="SUBMITTING_USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="QUESTION_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_DATA_EVALUATIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="QUALITY" Type="Int32" Nullable="false" />
+    <Property Name="CREATED_USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_DATA_QUESTIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="CONTENT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REPLIED" Type="Boolean" Nullable="false" />
+    <Property Name="SUBMITTING_USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="PROJECT_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_DATA_USER_APPLICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="ROLE_ID" Type="Int64" Nullable="false" />
+    <Property Name="ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_DATA_USER_PERSONAL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BIRTH_DATE" Type="DateTime" Precision="3" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREDIT" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_DATA_USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_PROJECTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_TABLE_SETTINGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TABLE_ID" Type="Int64" Nullable="false" />
+    <Property Name="COLUMN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COLUMN_HEADER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COLUMN_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_TABLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TABLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_TOPICS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_VALUATION_TYPES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="VALUATION_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VALUATION_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATED_USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APP_PARAMS_VALUATIONS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="VALUATION_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VALUATION_DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VALUATION_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USERID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SYS_USER_LOGIN">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserRoles" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserEmailID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="GradientFlowDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="APP_DATA_ANSWERS" EntityType="Self.APP_DATA_ANSWERS" />
+    <EntitySet Name="APP_DATA_EVALUATIONS" EntityType="Self.APP_DATA_EVALUATIONS" />
+    <EntitySet Name="APP_DATA_QUESTIONS" EntityType="Self.APP_DATA_QUESTIONS" />
+    <EntitySet Name="APP_DATA_USER_APPLICATION" EntityType="Self.APP_DATA_USER_APPLICATION" />
+    <EntitySet Name="APP_DATA_USER_PERSONAL" EntityType="Self.APP_DATA_USER_PERSONAL" />
+    <EntitySet Name="APP_DATA_USERS" EntityType="Self.APP_DATA_USERS" />
+    <EntitySet Name="APP_PARAMS_PROJECTS" EntityType="Self.APP_PARAMS_PROJECTS" />
+    <EntitySet Name="APP_PARAMS_TABLE_SETTINGS" EntityType="Self.APP_PARAMS_TABLE_SETTINGS" />
+    <EntitySet Name="APP_PARAMS_TABLES" EntityType="Self.APP_PARAMS_TABLES" />
+    <EntitySet Name="APP_PARAMS_TOPICS" EntityType="Self.APP_PARAMS_TOPICS" />
+    <EntitySet Name="APP_PARAMS_VALUATION_TYPES" EntityType="Self.APP_PARAMS_VALUATION_TYPES" />
+    <EntitySet Name="APP_PARAMS_VALUATIONS" EntityType="Self.APP_PARAMS_VALUATIONS" />
+    <EntitySet Name="SYS_USER_LOGIN" EntityType="Self.SYS_USER_LOGIN" />
+  </EntityContainer>
+</Schema>
