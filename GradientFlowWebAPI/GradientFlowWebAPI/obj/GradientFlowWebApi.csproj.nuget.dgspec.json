@@ -1,14 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\GradientFlowWebApi\\GradientFlowWebApi.csproj": {}
+    "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\GradientFlowWebApi\\GradientFlowWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\DTOs\\DTOs.csproj": {
+    "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\DTOs\\DTOs.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\DTOs\\DTOs.csproj",
+        "projectPath": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\DTOs\\DTOs.csproj",
+        "UsingMicrosoftNETSdk": false,
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -19,20 +20,20 @@
         "net472": {}
       }
     },
-    "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\GradientFlowWebApi\\GradientFlowWebApi.csproj": {
+    "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\GradientFlowWebApi\\GradientFlowWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\GradientFlowWebApi\\GradientFlowWebApi.csproj",
+        "projectUniqueName": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\GradientFlowWebApi\\GradientFlowWebApi.csproj",
         "projectName": "GradientFlowWebApi",
-        "projectPath": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\GradientFlowWebApi\\GradientFlowWebApi.csproj",
-        "packagesPath": "C:\\Users\\claud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\GradientFlowWebApi\\obj\\",
+        "projectPath": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\GradientFlowWebApi\\GradientFlowWebApi.csproj",
+        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\GradientFlowWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Programmi\\VisualStudioShared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\claud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,8 +49,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\DTOs\\DTOs.csproj": {
-                "projectPath": "C:\\Users\\claud\\source\\repos\\GradientFlowWebApi\\DTOs\\DTOs.csproj"
+              "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\DTOs\\DTOs.csproj": {
+                "projectPath": "D:\\projects\\Nuova cartella\\GradientFlow1.0\\GradientFlowWebAPI\\DTOs\\DTOs.csproj"
               }
             }
           }
@@ -58,7 +59,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net6.0": {
@@ -116,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
